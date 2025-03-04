@@ -1,0 +1,58 @@
+/* Контейнер для персонажа */
+#player-container {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Сам персонаж */
+#player img {
+    width: 60px;
+    height: auto;
+}
+
+/* Никнейм над персонажем */
+#nickname {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+/* Общий контейнер для других игроков */
+.other-player-container {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Сам персонаж других игроков */
+.other-player img {
+    width: 60px;
+    height: auto;
+}
+
+/* Никнейм над другими игроками */
+.other-nickname {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}

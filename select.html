@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор персонажа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Фон -->
+        <div class="background"></div>
+
+        <!-- Изображение персонажа -->
+        <img src="img/startchar.png" alt="Персонаж" class="character-image">
+
+        <!-- Ввод никнейма -->
+        <input type="text" id="nickname" placeholder="Введите никнейм">
+
+        <!-- Кнопка играть -->
+        <button onclick="startGame()">Играть</button>
+    </div>
+
+    <script>
+        function startGame() {
+            let nickname = document.getElementById("nickname").value.trim();
+            if (nickname === "") {
+                alert("Введите никнейм!");
+                return;
+            }
+
+            // Сохраняем никнейм в localStorage
+            localStorage.setItem("playerNickname", nickname);
+            console.log("Сохраненный никнейм:", nickname); // Проверяем в консоли
+
+            // Переход на main.html
+            window.location.href = "main.html";
+        }
+    </script>
+</body>
+</html>

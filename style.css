@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black; /* Темный фон */
+    font-family: Arial, sans-serif;
+}
+
+/* Общий стиль для всех контейнеров */
+.container,
+#loading-screen,
+#main-content {
+    width: 90%;
+    max-width: 400px;
+    height: 90vh; /* Одинаковая высота */
+    text-align: center;
+    background: url('img/background.jpg') no-repeat center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Все элементы внутри контейнера */
+.container * {
+    position: absolute;
+    z-index: 2;
+}
+
+/* Изображение персонажа */
+.character-image {
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    top: 50%; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Поле ввода никнейма */
+input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(45, 45, 45, 0.2);
+    color: white;
+    outline: none;
+    margin-bottom: 10px;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Кнопка "Играть" */
+button {
+    width: 80%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #00ffe5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    top: 90%; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+button:hover {
+    background: #17dcfa;
+}
+
+/* Экран загрузки */
+#loading-screen {
+    background: url('img/loading.jpg') no-repeat center/cover;
+}
+
+/* Основной контент */
+#main-content {
+    background: url('img/main-background.jpg') no-repeat center/cover;
+    display: none; /* Изначально скрыт */
+}
+
+/* Анимация мигания текста */
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Текст загрузки */
+.loading-text {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    animation: blink 1.5s infinite alternate;
+}
+
+
+
+
+/* Нижняя панель управления */
+.bottom-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 110%; /* Панель на всю ширину */
+    height: 70px; /* Фиксированная высота */
+    background: #00cdec; /* Цвет панели */
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+    gap: 20px; /* Расстояние между кнопками */
+    padding: 0 20px; /* Боковые отступы */
+    box-sizing: border-box; /* Чтобы padding не раздувал панель */
+    overflow: hidden; /* Защита от выхода элементов */
+}
+
+/* Кнопки меню */
+.menu-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #23fbfb; /* Цвет кнопки */
+    color: rgb(10, 10, 10);
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* Блок аватара */
+.avatar-block {
+    position: absolute; /* Позволяет свободно перемещать */
+    top: 14%; /* Пример: центрирование */
+    left: 32%;
+    transform: translate(-50%, -50%); /* Точное центрирование */
+    width: 150px; /* Размер контейнера */
+    height: 150px;
+}
+
+/* Кнопка с рамкой */
+.framed-button {
+    width: 50%; /* Подгоняем под контейнер */
+    height: 50%;
+    border: 5px solid rgb(4, 255, 255); /* Рамка */
+    border-radius: 10px; /* Скругление углов */
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden; /* Обрезка лишнего */
+}
+
+/* Изображение внутри кнопки */
+.framed-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняет кнопку без искажений */
+    border-radius: 6px;
+}
+
+
+
+/* Контейнер для статик никнейма */
+#static-nickname-container {
+    position: fixed; /* Фиксированное положение */
+    top: 91px; /* Отступ от верхнего края */
+    right: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 100; /* Поверх всех элементов */
+}
+
+/* Фиксированный никнейм */
+#static-nickname {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+}
+
+
+
+
+
